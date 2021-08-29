@@ -1,9 +1,19 @@
 package com.bridgelabz.printarray;
 
-public class PrintArray {
+public class PrintArray <T>{
 	
-	private static <t> void toPrint(t[] inputArray) {
-		for(t element : inputArray) {
+	private T[] inputArray;
+	
+	public PrintArray(T[] inputArray) {
+		this.inputArray = inputArray;
+	}
+	
+	public void toPrint() {
+		PrintArray.toPrint(this.inputArray);
+	}
+	
+	private static <E> void toPrint(E[] inputArray) {
+		for(E element : inputArray) {
 			System.out.println(element);
 		}
 		System.out.println();
@@ -13,14 +23,14 @@ public class PrintArray {
 		
 		System.out.println("----- Welcome to Printing Array using Java Generics -----");
 		
-		Integer[] a = {1,2,3};
-		Double[] b = {1.2 , 1.2, 1.3};
-		Character[] c = {'a', 's', 'h', 'i', 'k', 'a'};
+		Integer[] integerArray = {1,2,3};
+		Double[] doubleArray = {1.2 , 1.2, 1.3};
+		Character[] characterArray = {'a', 's', 'h', 'i', 'k', 'a'};
 		
-		toPrint(a);
-		toPrint(b);
-		toPrint(c);
-			
+		new PrintArray(integerArray).toPrint();
+		PrintArray.toPrint(doubleArray);
+		PrintArray.toPrint(characterArray);
 		
 	}
+	
 }
