@@ -2,28 +2,11 @@ package com.bridgelabz.printarray;
 
 public class PrintArray {
 	
-private static void toPrint(Integer[] a) {
-		
-		for(int element : a) {
+	private static <t> void toPrint(t[] inputArray) {
+		for(t element : inputArray) {
 			System.out.println(element);
 		}
-		
-	}
-	
-	private static void toPrint(Double[] b) {
-		
-		for(double element : b) {
-			System.out.println(element);
-		}
-		
-	}
-	
-	private static void toPrint(Character[] c) {
-		
-		for(char element : c) {
-			System.out.println(element);
-		}
-		
+		System.out.println();
 	}
 	
 	public static void main(String[] args) {
@@ -33,6 +16,7 @@ private static void toPrint(Integer[] a) {
 		Integer[] a = {1,2,3};
 		Double[] b = {1.2 , 1.2, 1.3};
 		Character[] c = {'a', 's', 'h', 'i', 'k', 'a'};
+		
 		toPrint(a);
 		toPrint(b);
 		toPrint(c);
